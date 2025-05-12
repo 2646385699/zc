@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>用户购买页面</title>
+    <link rel="stylesheet" href="styles/style1.css">
+</head>
+<body>
+    <div id="purchase-panel">
+        <h2>商品购买页面</h2>
+        <!-- 商品列表 -->
+        <div class="product-list-section">
+            <h3>商品列表</h3>
+            <div id="product-list" class="product-list">
+                <!-- 商品项将通过 JavaScript 动态添加 -->
+            </div>
+        </div>
+        <!-- 购买弹窗 -->
+        <div class="overlay" style="display: none;"></div>
+        <div class="update-form" style="display: none;">
+            <h3>购买商品</h3>
+            <div class="form-group">
+                <label for="buy-quantity">购买数量</label>
+                <input type="number" id="buy-quantity" min="1">
+            </div>
+            <div class="update-form-buttons">
+                <button class="cancel-btn">取消</button>
+                <button class="confirm-btn">确认购买</button>
+            </div>
+        </div>
+    </div>
+    <script src="scripts/purchase.js"></script>
+</body>
+</html>

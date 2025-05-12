@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>管理员登录</title>
+    <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+    <!-- 登录模态框 -->
+    <div class="Blogin-modal">
+        <div class="Blogin-modal-content">
+            <h2>管理员登录</h2>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="login-username">用户名</label>
+                    <input type="text" id="login-username" required>
+                </div>
+                <div class="form-group">
+                    <label for="login-password">密码</label>
+                    <input type="password" id="login-password" required>
+                </div>
+                <button type="button" id="login-btn">登录</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- 管理面板 -->
+    <div id="admin-panel" style="display: none;">
+        <div class="admin-header">
+            <h2>商品管理系统</h2>
+            <button id="add-product-btn" class="btn-primary">添加新商品</button>
+        </div>
+
+        <!-- 添加商品表单 -->
+        <div id="add-product-form" style="display: none;" class="form-container">
+            <h3>添加新商品</h3>
+            <form id="product-form">
+                <div class="form-group">
+                    <label for="product-name">商品名称</label>
+                    <input type="text" id="product-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="product-price">价格</label>
+                    <input type="number" id="product-price" step="0.01" required>
+                </div>
+                <div class="form-group">
+                    <label for="product-stock">库存</label>
+                    <input type="number" id="product-stock" required>
+                </div>
+                <div class="form-group">
+                    <label for="product-image">商品图片</label>
+                    <input type="file" id="product-image" accept="image/*" required>
+                </div>
+                <button type="submit" class="btn-primary">保存商品</button>
+                <button type="button" class="btn-secondary" onclick="toggleAddProductForm()">取消</button>
+            </form>
+        </div>
+
+        <!-- 商品列表 -->
+        <div class="products-list">
+            <table id="products-table">
+                <thead>
+                    <tr>
+                        <th>商品名称</th>
+                        <th>价格</th>
+                        <th>库存</th>
+                        <th>销量</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody id="products-tbody">
+                    <!-- 商品列表将通过JavaScript动态加载 -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="script1.js"></script>
+</body>
+</html>
