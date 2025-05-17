@@ -31,16 +31,27 @@ export default struct Index {
   build() {
     Scroll() {
       Column({ space: 10 }) {
-        Row(){
-          Text('健康').width('50%').fontSize(50).fontWeight(600)
-          Row(){
+        // 顶部栏
+        Row() {
+          // 左侧标题
+          Text('健康')
+            .fontSize(24)
+            .fontWeight(600)
+            .fontColor(Color.Black)
+          // 右侧图标组
+          Row({ space: 12 }) {
             Image($rawfile('images/搜索.jpg'))
+              .width(26)
+              .height(26)
             Image($rawfile('images/四个点.jpg'))
-
+              .width(26)
+              .height(26)
           }
         }
-
-
+        .width('100%')
+        .justifyContent(FlexAlign.SpaceBetween)
+        .alignItems(VerticalAlign.Center)
+        .padding({ top: 16, left: 16, right: 16, bottom: 10 })
 
         // 轮播图
         Swiper() {
@@ -85,7 +96,6 @@ export default struct Index {
         .alignItems(VerticalAlign.Bottom)
         .justifyContent(FlexAlign.SpaceBetween)
 
-
         List({ space: 15 }) {
           ForEach(this.newsList, (news: News, index: number) => {
             ListItem() {
@@ -94,7 +104,6 @@ export default struct Index {
           })
         }
         .width('95%')
-
       }
       .width('100%')
       .justifyContent(FlexAlign.Start)
@@ -129,8 +138,6 @@ export default struct Index {
 
       Column() {
         Text(news.title).width('90%').fontSize(14).maxLines(2).textOverflow({ overflow: TextOverflow.Ellipsis })
-
-
         Row({ space: 10 }) {
           ForEach(news.labels, (label: string, index: number) => {
             Text(label)
